@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = 'https://aframe.io/releases/1.0.4/aframe.min.js'></script>
+        <script src = 'https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js'></script>
+        <script src = 'rotatingMap.js'></script>
+        <script src = 'rotatingPlane.js'></script>
+        <Script src = 'ring.js'></Script>
+        <script src = 'bird.js'></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <body>
+        <a-scene background = 'color:lightblue'>
+            <a-entity id = 'camera' look-controls camera position = '0 0 20'></a-entity>
+
+            <!--assets management-->
+            <a-assets timeout = '5000'>
+                <a-asset-item id = 'terrainImage' src = './terrain/scene.gltf'></a-asset-item>
+                <a-asset-item id = 'plane' src = './plane/scene.gltf'></a-asset-item>
+            </a-assets>
+
+            <!--called the terrain-->
+            <a-entity
+                id = 'terrain'
+                gltf-model = '#terrainImage'
+                position = '0 0 0'
+                scale = '0.5 0.5 0.5'
+                animation = 'property:position ; to: 0 0 150 ; easing:linear; loop:true; dur:25000'
+                terrain-rotation-reader
+                target-ring
+                flying-birds
+                >
+            </a-entity>
+
+            <!--called the plane-->
+            <a-entity
+                gltf-model = '#plane'
+                position = '0 0 15'
+                scale = '2 2 2' 
+                rotation = '0 180 0'
+                plane-rotation-reader
+                dynamic-body = 'mass:0'
+                gameplay>
+            </a-entity>
+        </a-scene>
+    </body>
+</html>
