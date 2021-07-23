@@ -12,12 +12,12 @@ AFRAME.registerComponent('flying-birds',{
     flyingBirds:(id,pos)=>{
         var birdEl = document.createElement('entity')
         birdEl.setAttribute('scale',{x:500,y:500,z:500})
-        birdEl.setAttribute('gltf-model','./assets/models/bird/scene.gltf')
+        birdEl.setAttribute('gltf-model','./bird/scene.gltf')
         birdEl.setAttribute('animation-mixer',{})
         birdEl.setAttribute('position',pos)
         birdEl.setAttribute('id',id)
         var terrainEl = document.querySelector('#terrain')
-        terrainEl.appendChild('birdEl')
+        terrainEl.appendChild(birdEl)
         birdEl.setAttribute('static-body',{
             shape:'sphere',sphereRadius:5
         })
