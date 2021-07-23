@@ -11,7 +11,7 @@ AFRAME.registerComponent('flying-birds',{
     },
     flyingBirds:(id,pos)=>{
         var birdEl = document.createElement('a-entity')
-        birdEl.setAttribute('scale',{x:500,y:500,z:500})
+        birdEl.setAttribute('scale',{x:1000,y:1000,z:1000})
         birdEl.setAttribute('gltf-model','./bird/scene.gltf')
         birdEl.setAttribute('animation-mixer',{})
         birdEl.setAttribute('position',pos)
