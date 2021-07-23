@@ -7,7 +7,6 @@
         <script src = 'rotatingPlane.js'></script>
         <Script src = 'ring.js'></Script>
         <script src = 'bird.js'></script>
-        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
     <body>
         <a-scene background = 'color:lightblue'>
@@ -41,6 +40,23 @@
                 plane-rotation-reader
                 dynamic-body = 'mass:0'
                 gameplay>
+            </a-entity>
+
+            <a-entity id = 'header'
+            position = '0 10 0'>
+                <a-entity position = '0 6 0' text = 'font:exo2bold; align:center; width:50; color:black; value:Flight Simulation'></a-entity>
+                <a-entity position = '-2 3 0' text = 'font:aileronsemibold; align:left; width:15; color:black; value:time\nremaining'></a-entity>
+                <a-entity id = 'timer' position = '2 3 0' text = 'font:exo2bold; align:center; width:50; color:black; value:00:00'></a-entity>
+            </a-entity>
+
+            <a-entity position = '20 4 0' >
+                <a-entity position = '12 8 0' text = 'font:aileronsemibold; align:left; width:15; color:black; value:targets\nremaining'></a-entity>
+                <a-entity id = 'targets' position = '14 8 0' text = 'font:exo2bold; align:center; width:50; color:black; value:25'></a-entity>
+            </a-entity>
+
+            <a-entity position = '-14 4 0' >
+                <a-entity position = '-12 8 0' text = 'font:aileronsemibold; align:left; width:15; color:black; value:score'></a-entity>
+                <a-entity id = 'scores' position = '-14 8 0' text = 'font:exo2bold; align:center; width:50; color:black; value:0'></a-entity>
             </a-entity>
         </a-scene>
     </body>
